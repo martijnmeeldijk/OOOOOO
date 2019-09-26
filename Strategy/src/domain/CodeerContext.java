@@ -10,11 +10,12 @@ public class CodeerContext {
     }
 
     public String codeer(){
-
+        codingStrategy.codeer(text);
         return null;
 
     }
     public String decodeer(){
+        codingStrategy.decodeer(text);
         return null;
     }
 
