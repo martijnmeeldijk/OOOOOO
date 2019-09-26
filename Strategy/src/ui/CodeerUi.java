@@ -11,8 +11,10 @@ public class CodeerUi {
         this.codeerContext = codeerContext;
     }
 
-    public static void drawMainMenu(){
-        String menu = "1. Add product\n2. Show product\n3. Show rental price \n\n0. Quit";
+    public static String drawMainMenu(){
+        String menu = "1. caesar\n2. spiegelen\\n\n0. Quit";
+        String codemethod = "1. codeer \n 2. decodeer";
         String choiceString = JOptionPane.showInputDialog(menu);
+        return choiceString;
     }
 }
