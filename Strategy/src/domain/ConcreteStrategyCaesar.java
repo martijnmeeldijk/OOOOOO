@@ -26,4 +26,5 @@ public class ConcreteStrategyCaesar implements CodingStrategy {
     private char permuteerChar(int aantalPlaatsen){
         return 'a';
     }
+    String mamam;
 }
