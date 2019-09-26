@@ -9,11 +9,14 @@ public class CodeerContext {
         this.codingStrategy=codingStrategy;
     }
 
-    public String Codeer(){
+    public String codeer(){
+
         return null;
 
     }
-    public String Decodeer(){
+    public String decodeer(){
         return null;
     }
+
+
 }
