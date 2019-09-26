@@ -23,8 +23,18 @@ public class ConcreteStrategyCaesar implements CodingStrategy {
         return null;
     }
 
-    private char permuteerChar(int aantalPlaatsen){
+
+    // Verschuift een letter een aantal plaatsen
+    private char permuteerChar(int aantalPlaatsen, char letter){
+        if(aantalPlaatsen < 0){
+            aantalPlaatsen = 26 + aantalPlaatsen;
+        }
+
+        for (int i = 0; i <= aantalPlaatsen; i++){
+
+        }
+
         return 'a';
     }
-    String mamam;
+
 }
