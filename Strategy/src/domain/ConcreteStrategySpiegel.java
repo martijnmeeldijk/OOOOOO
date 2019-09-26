@@ -4,10 +4,10 @@ public class ConcreteStrategySpiegel {
 
     public String spiegel(String teSpiegelen){
         char[] array = teSpiegelen.toCharArray();
-        String spiegel="";
+        StringBuilder spiegel= new StringBuilder();
         for(int i=array.length-1;i>=0;i--){
-            spiegel+=array[i];
+            spiegel.append(String.valueOf(array[i]));
         }
-        return spiegel;
+        return spiegel.toString();
     }
 }
