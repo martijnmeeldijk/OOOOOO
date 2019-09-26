@@ -11,7 +11,7 @@ public class CodeerUi {
         this.codeerContext = codeerContext;
     }
 
-    public void drawMainMenu(){
+    public static void drawMainMenu(){
         String menu = "1. Add product\n2. Show product\n3. Show rental price \n\n0. Quit";
         String choiceString = JOptionPane.showInputDialog(menu);
     }
