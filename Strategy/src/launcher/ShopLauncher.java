@@ -6,12 +6,19 @@ import ui.CodeerUi;
 import javax.swing.*;
 
 public class ShopLauncher {
-
+private static CodeerUi codeerUi;
     public static void main(String[] args) {
 
-        String menu = "1. Add product\n2. Show product\n3. Show rental price \n\n0. Quit";
+        //String menu = "1. caesar\n2. spiegelen\\n\n0. Quit";
+        String codemethod = "1. codeer \n 2. decodeer";
 
-        String choiceString = JOptionPane.showInputDialog(menu);
+        String choiceString = codeerUi.drawMainMenu();
+        if(choiceString.equals("1")){
+            String methode = JOptionPane.showInputDialog(codemethod);
+        }
+
+
+
         //CodeerUi codeerUi = new CodeerUi();
 
     }
