@@ -6,7 +6,7 @@ public class ConcreteStrategySpiegel {
         char[] array = teSpiegelen.toCharArray();
         StringBuilder spiegel= new StringBuilder();
         for(int i=array.length-1;i>=0;i--){
-            spiegel.append(String.valueOf(array[i]));
+            spiegel.append(array[i]);
         }
         return spiegel.toString();
     }
