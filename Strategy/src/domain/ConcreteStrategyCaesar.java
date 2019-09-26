@@ -1,11 +1,13 @@
 package domain;
 
-public class ConcreteStrategyCaesar implements CodingStrategy {
-    String message;
-    String alphabet = "abcdefghijklmnopqrstuvwxyz";
+import java.util.ArrayList;
 
-    public ConcreteStrategyCaesar(String message){
-        this.message = message;
+public class ConcreteStrategyCaesar implements CodingStrategy {
+    char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+    int aantalPlaatsen;
+
+    public ConcreteStrategyCaesar(int aantalPlaatsen){
+        this.aantalPlaatsen = aantalPlaatsen;
     }
 
     @Override
@@ -15,6 +17,13 @@ public class ConcreteStrategyCaesar implements CodingStrategy {
 
     @Override
     public String codeer(String message) {
+        char[] messageArray = message.toLowerCase().toCharArray();
+
+
         return null;
+    }
+
+    private char permuteerChar(int aantalPlaatsen){
+        return 'a';
     }
 }
