@@ -1,6 +1,6 @@
 package domain;
 
 public interface CodingStrategy {
-    public String decode(String message);
-    public String encode(String message);
+    public String decodeer(String message);
+    public String codeer(String message);
 }
