@@ -13,9 +13,14 @@ public class ConcreteStrategyCaesar implements CodingStrategy {
 
     @Override
     public String decodeer(String message) {
+        char[] messageArray = message.toLowerCase().toCharArray();
+        int aantal = -aantalPlaatsen;
 
+        for(int i = 0; i<messageArray.length ; i++){
+            messageArray[i] = permuteerChar(aantal, messageArray[i]);
+        }
 
-        return null;
+        return joinArray(messageArray);
     }
 
     @Override
@@ -27,9 +32,15 @@ public class ConcreteStrategyCaesar implements CodingStrategy {
             messageArray[i] = permuteerChar(aantal, messageArray[i]);
         }
 
-        return null; //String.join("", messageArray);
+        return joinArray(messageArray);
     }
-
+    private String joinArray(char[] array){
+        String message = "";
+        for (char s : array){
+            message += s;
+        }
+        return message;
+    }
 
     // Verschuift een letter een aantal plaatsen
     private char permuteerChar(int aantalPlaatsen, char letter){
@@ -37,7 +48,7 @@ public class ConcreteStrategyCaesar implements CodingStrategy {
             aantalPlaatsen = 26 + aantalPlaatsen;
         }
 
-        for (int i = 0; i <= aantalPlaatsen; i++){
+        for (int i = 0; i < aantalPlaatsen; i++){
             if(letter == 'z') letter = 'a';
             else letter ++;
         }
