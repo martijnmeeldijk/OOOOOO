@@ -1,25 +1,35 @@
 package launcher;
 
-import domain.CodeerContext;
+import domain.CodingStrategy;
+import domain.ConcreteStrategyCaesar;
+import domain.ConcreteStrategySpiegel;
 import ui.CodeerUi;
 
-import javax.swing.*;
-
 public class ShopLauncher {
-private static CodeerUi codeerUi;
+    public static CodingStrategy codingStrategy;
     public static void main(String[] args) {
-
-        //String menu = "1. caesar\n2. spiegelen\\n\n0. Quit";
-        String codemethod = "1. codeer \n 2. decodeer";
-
-        String choiceString = codeerUi.drawMainMenu();
-        if(choiceString.equals("1")){
-            String methode = JOptionPane.showInputDialog(codemethod);
+        String methode = CodeerUi.drawMainMenu();
+        String deorenc = CodeerUi.codingOrEncoding();
+        String text = CodeerUi.showString();
+        if(methode.equals("1")){//kies concrete strat
+            codingStrategy = new ConcreteStrategyCaesar(2);
         }
-
-
-
-        //CodeerUi codeerUi = new CodeerUi();
+        else if(methode.equals("2")){
+            codingStrategy = new ConcreteStrategySpiegel();
+        }
+        else {
+            throw new IllegalArgumentException();
+        }
+        if(deorenc.equals("1")){//choose coding or decoding
+            CodeerUi.showString(codingStrategy.codeer(text));
+            System.out.println(codingStrategy.codeer(text));
+        }
+        else if(deorenc.equals("2")){//choose coding or decoding
+            CodeerUi.showString(codingStrategy.decodeer(text));
+        }
+        else {
+            throw new IllegalArgumentException();
+        }
 
     }
 }
