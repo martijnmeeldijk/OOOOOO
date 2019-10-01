@@ -20,7 +20,15 @@ public class CodeerUi {
         String codemethod = "1. codeer \n 2. decodeer";
         String choiceString = JOptionPane.showInputDialog(codemethod);
         return choiceString;
+    }
+    public static  String showString(){
+        String codemethod = "geef te coderen string";
+        String choiceString = JOptionPane.showInputDialog(codemethod);
+        return choiceString;
+    }
 
+    public static  void showString(String string){
+        JOptionPane.showMessageDialog(null, string);
     }
 
 
