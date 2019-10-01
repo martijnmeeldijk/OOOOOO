@@ -4,12 +4,23 @@ import java.util.ArrayList;
 
 public class ConcreteStrategyCaesar implements CodingStrategy {
     char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-    int aantalPlaatsen;
+    private int aantalPlaatsen;
 
     public ConcreteStrategyCaesar(int aantalPlaatsen){
         this.aantalPlaatsen = aantalPlaatsen;
     }
 
+    public char[] getAlphabet() {
+        return alphabet;
+    }
+
+    public void setAantalPlaatsen(int aantalPlaatsen) {
+        this.aantalPlaatsen = aantalPlaatsen;
+    }
+
+    public int getAantalPlaatsen() {
+        return aantalPlaatsen;
+    }
 
     @Override
     public String decodeer(String message) {
