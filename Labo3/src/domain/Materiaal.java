@@ -15,4 +15,5 @@ public class Materiaal {
         this.state = uitleenbaar;
     }
 
+    private String testPC2;
 }
