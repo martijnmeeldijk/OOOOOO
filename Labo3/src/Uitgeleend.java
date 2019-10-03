@@ -1,2 +1,2 @@
-public interface Uitgeleend extends BoekState {
+public interface Uitgeleend extends MateriaalState {
 }

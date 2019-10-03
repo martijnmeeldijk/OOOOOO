@@ -1,3 +1,3 @@
-public interface Beschadigd extends BoekState{
+public interface Beschadigd extends MateriaalState {
 
 }

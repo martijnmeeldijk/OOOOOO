@@ -1,2 +1,2 @@
-public interface Uitleenbaar extends BoekState {
+public interface Uitleenbaar extends MateriaalState {
 }

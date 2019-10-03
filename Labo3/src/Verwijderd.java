@@ -1,2 +1,2 @@
-public interface Verwijderd extends BoekState {
+public interface Verwijderd extends MateriaalState {
 }
