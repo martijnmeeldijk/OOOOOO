@@ -1,22 +1,43 @@
 package domain;
 
 public class CodeerContext {
-    private String test1;
+    private String text;
+    private String result;
     private  CodingStrategy codingStrategy;
 
     public CodeerContext(String text, CodingStrategy codingStrategy) {
-        this.test1 = text;
+        this.text = text;
         this.codingStrategy=codingStrategy;
     }
 
-    public String codeer(){
-        codingStrategy.codeer(test1);
-        return null;
-
+    public void codeer(){
+       result=  codingStrategy.codeer(text);
     }
-    public String decodeer(){
-        codingStrategy.decodeer(test1);
-        return null;
+    public void decodeer(){
+        result= codingStrategy.decodeer(text);
     }
 
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public CodingStrategy getCodingStrategy() {
+        return codingStrategy;
+    }
+
+    public void setCodingStrategy(CodingStrategy codingStrategy) {
+        this.codingStrategy = codingStrategy;
+    }
 }
