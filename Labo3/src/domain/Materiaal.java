@@ -14,6 +14,4 @@ public class Materiaal {
         this.beschadigd = new Beschadigd();
         this.state = uitleenbaar;
     }
-
-    private String testPC2;
 }
