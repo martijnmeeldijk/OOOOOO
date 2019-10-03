@@ -1,2 +1,2 @@
-public class Verwijderd {
+public interface Verwijderd extends BoekState {
 }

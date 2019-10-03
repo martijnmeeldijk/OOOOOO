@@ -1,2 +1,2 @@
-public class BoekState {
+public interface BoekState {
 }

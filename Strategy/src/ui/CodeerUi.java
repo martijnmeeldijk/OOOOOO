@@ -16,18 +16,18 @@ public class CodeerUi {
         String choiceString = JOptionPane.showInputDialog(menu);
         return choiceString;
     }
-    public static  String codingOrEncoding(){
+    public static String codingOrEncoding(){
         String codemethod = "1. codeer \n 2. decodeer";
         String choiceString = JOptionPane.showInputDialog(codemethod);
         return choiceString;
     }
-    public static  String showString(){
+    public static String showString(){
         String codemethod = "geef te coderen string";
         String choiceString = JOptionPane.showInputDialog(codemethod);
         return choiceString;
     }
 
-    public static  void showString(String string){
+    public static void showString(String string){
         JOptionPane.showMessageDialog(null, string);
     }
 

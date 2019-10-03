@@ -1,2 +1,3 @@
-public class Beschadigd {
+public interface Beschadigd extends BoekState{
+
 }
