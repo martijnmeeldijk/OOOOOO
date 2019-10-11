@@ -19,7 +19,23 @@ public class Materiaal {
         this.currentState = state;
     }
 
+    public MateriaalState getCurrentState() {
+        return currentState;
+    }
 
+    public MateriaalState getVerwijderd() {
+        return verwijderd;
+    }
 
+    public MateriaalState getUitleenbaar() {
+        return uitleenbaar;
+    }
 
+    public MateriaalState getUitgeleend() {
+        return uitgeleend;
+    }
+
+    public MateriaalState getBeschadigd() {
+        return beschadigd;
+    }
 }

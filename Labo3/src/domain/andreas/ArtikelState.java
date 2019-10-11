@@ -1,8 +1,8 @@
-package domain;
+package domain.andreas;
 
-import domain.andreas.NotPossibleException;
+import java.io.Serializable;
 
-public abstract class MateriaalState {
+public abstract class ArtikelState implements Serializable {
     double leenUit() {
         throw new NotPossibleException();
     }
