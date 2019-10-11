@@ -2,11 +2,18 @@ package domain;
 
 public class Beschadigd extends MateriaalState {
 
-    public Beschadigd(Materiaal marteriaal) {
-        super(marteriaal);
+    public Beschadigd(Materiaal materiaal) {
+        super(materiaal);
     }
+
+    @Override
+    void herstel() {
+        getMateriaal().setState(getMateriaal().getUitleenbaar());
+    }
+
     @Override
     void verwijder() {
-        super.verwijder();
+        getMateriaal().setState(getMateriaal().getVerwijderd());
+
     }
 }

@@ -2,7 +2,7 @@ package domain;
 
 public class Verwijderd extends MateriaalState {
 
-    public Verwijderd(Materiaal marteriaal) {
-        super(marteriaal);
+    public Verwijderd(Materiaal materiaal) {
+        super(materiaal);
     }
 }

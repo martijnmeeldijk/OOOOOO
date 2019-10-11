@@ -21,11 +21,11 @@ public abstract class MateriaalState {
         this.materiaal = materiaal;
     }
 
-    public Materiaal getArtikel() {
+    public Materiaal getMateriaal() {
         return materiaal;
     }
 
-    public void setArtikel(Materiaal materiaal) {
+    public void setMateriaal(Materiaal materiaal) {
         this.materiaal = materiaal;
     }
 }

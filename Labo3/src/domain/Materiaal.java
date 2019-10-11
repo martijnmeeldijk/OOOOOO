@@ -20,7 +20,7 @@ public class Materiaal {
         this.aanschafprijs=aanschafprijs;
     }
 
-    private void setState(MateriaalState state){
+    public void setState(MateriaalState state){
         this.currentState = state;
     }
 
@@ -42,5 +42,13 @@ public class Materiaal {
 
     public MateriaalState getBeschadigd() {
         return beschadigd;
+    }
+
+    public String getNaam() {
+        return naam;
+    }
+
+    public double getAanschafprijs() {
+        return aanschafprijs;
     }
 }

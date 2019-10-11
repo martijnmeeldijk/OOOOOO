@@ -12,11 +12,12 @@ public class Uitgeleend extends MateriaalState {
 
     @Override
     double brengTerug(boolean beschadigd) {
-        return super.brengTerug(beschadigd);
-    }
-
-    @Override
-    void herstel() {
-        super.herstel();
+        if (beschadigd) {
+            getMateriaal().setState(getMateriaal().getBeschadigd());
+            return getMateriaal().getAanschafprijs() / 3;
+        } else {
+            getMateriaal().setState(getMateriaal().getUitleenbaar());
+            return 0;
+        }
     }
 }
