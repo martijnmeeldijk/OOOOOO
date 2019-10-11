@@ -6,13 +6,18 @@ public class Materiaal {
     private MateriaalState uitleenbaar;
     private MateriaalState uitgeleend;
     private MateriaalState beschadigd;
+    private String naam;
+    private double aanschafprijs;
 
-    public Materiaal(){
-        this.verwijderd = new Verwijderd();
-        this.uitgeleend = new Uitgeleend();
-        this.uitleenbaar = new Uitleenbaar();
-        this.beschadigd = new Beschadigd();
+
+    public Materiaal(String naam, double aanschafprijs){
+        this.verwijderd = new Verwijderd(this);
+        this.uitgeleend = new Uitgeleend(this);
+        this.uitleenbaar = new Uitleenbaar(this);
+        this.beschadigd = new Beschadigd(this);
         this.currentState = uitleenbaar;
+        this.naam= naam;
+        this.aanschafprijs=aanschafprijs;
     }
 
     private void setState(MateriaalState state){
