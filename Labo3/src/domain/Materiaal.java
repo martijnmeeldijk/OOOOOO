@@ -5,7 +5,7 @@ public class Materiaal {
     private MateriaalState verwijderd;
     private MateriaalState uitleenbaar;
     private MateriaalState uitgeleend;
-    private MateriaalState beschadigd; // zoals Maarten
+    private MateriaalState beschadigd;
 
     public Materiaal(){
         this.verwijderd = new Verwijderd();

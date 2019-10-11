@@ -6,7 +6,7 @@ import domain.ConcreteStrategySpiegel;
 import ui.CodeerUi;
 
 public class ShopLauncher {
-    public static CodeerContext codeerContext = new CodeerContext("codingcontext", new ConcreteStrategySpiegel());
+    public static CodeerContext codeerContext = new CodeerContext("codingcontext", null);
     public static void main(String[] args) {
         String methode = CodeerUi.drawMainMenu();
         String deorenc = CodeerUi.codingOrEncoding();
