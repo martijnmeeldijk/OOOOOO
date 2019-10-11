@@ -1,17 +1,19 @@
 package domain;
 
 public class Uitleenbaar extends MateriaalState {
-    public Uitleenbaar(Materiaal marteriaal) {
-        super(marteriaal);
+    public Uitleenbaar(Materiaal materiaal) {
+        super(materiaal);
     }
 
     @Override
     double leenUit() {
-        return super.leenUit();
+        this.getMateriaal().setState(getMateriaal().getUitgeleend());
+        return getMateriaal().getAanschafprijs() / 5;
+
     }
 
     @Override
     void verwijder() {
-        super.verwijder();
+        this.getMateriaal().setState(this.getMateriaal().getVerwijderd());
     }
 }
