@@ -1,7 +1,7 @@
 package domain;
 
 public class Materiaal {
-    private MateriaalState state;
+    private MateriaalState currentState;
     private MateriaalState verwijderd;
     private MateriaalState uitleenbaar;
     private MateriaalState uitgeleend;
@@ -12,6 +12,14 @@ public class Materiaal {
         this.uitgeleend = new Uitgeleend();
         this.uitleenbaar = new Uitleenbaar();
         this.beschadigd = new Beschadigd();
-        this.state = uitleenbaar;
+        this.currentState = uitleenbaar;
     }
+
+    private void setState(MateriaalState state){
+        this.currentState = state;
+    }
+
+
+
+
 }
