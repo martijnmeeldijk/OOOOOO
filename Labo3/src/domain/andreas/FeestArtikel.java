@@ -4,11 +4,11 @@ package domain.andreas;
 import java.io.Serializable;
 
 public class FeestArtikel implements Serializable {
+    private String naam;
     private ArtikelState beschadigdState;
     private ArtikelState uitgeleendState;
     private ArtikelState uitleenbaarState;
     private ArtikelState verwijderdState;
-    private String naam;
     private ArtikelState currentState = uitleenbaarState;
     private double aanschafprijs;
 
