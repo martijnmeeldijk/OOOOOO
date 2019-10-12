@@ -8,12 +8,12 @@ public class Beschadigd extends MateriaalState {
 
     @Override
     void herstel() {
-        getMateriaal().setState(getMateriaal().getUitleenbaar());
+        getMateriaal().setCurrentState(getMateriaal().getUitleenbaar());
     }
 
     @Override
     void verwijder() {
-        getMateriaal().setState(getMateriaal().getVerwijderd());
+        getMateriaal().setCurrentState(getMateriaal().getVerwijderd());
 
     }
 }

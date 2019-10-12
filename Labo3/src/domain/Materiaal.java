@@ -20,14 +20,28 @@ public class Materiaal {
         this.aanschafprijs=aanschafprijs;
     }
 
-    public void setState(MateriaalState state){
+    public double leenUit(){
+        return currentState.leenUit();
+    }
+    public void verwijder(){
+        currentState.verwijder();
+    }
+    public void herstel(){
+        currentState.herstel();
+    }
+    public double brengTerug(Boolean beschadigd){
+        return currentState.brengTerug(beschadigd);
+    }
+
+    //setters
+    public void setCurrentState(MateriaalState state){
         this.currentState = state;
     }
 
-    public MateriaalState getCurrentState() {
-        return currentState;
-    }
 
+
+    //getters
+    public MateriaalState getCurrentState() {return currentState;}
     public MateriaalState getVerwijderd() {
         return verwijderd;
     }

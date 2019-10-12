@@ -72,6 +72,10 @@ public class Shop implements Serializable {
         return artikels;
     }
 
+
+
+
+
     public void serialize() {
         String filename = "shop.txt";
 
@@ -87,6 +91,7 @@ public class Shop implements Serializable {
             System.out.println(ex.getMessage());
         }
     }
+
 
     private void deserialize() {
         try {

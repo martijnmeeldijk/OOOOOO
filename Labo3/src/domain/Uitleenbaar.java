@@ -7,11 +7,11 @@ public class Uitleenbaar extends MateriaalState {
 
     @Override
     double leenUit() {
-        this.getMateriaal().setState(getMateriaal().getUitgeleend());
+        this.getMateriaal().setCurrentState(getMateriaal().getUitgeleend());
         return getMateriaal().getAanschafprijs() / 5;
     }
     @Override
     void verwijder() {
-        this.getMateriaal().setState(this.getMateriaal().getVerwijderd());
+        this.getMateriaal().setCurrentState(this.getMateriaal().getVerwijderd());
     }
 }
