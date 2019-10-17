@@ -58,6 +58,13 @@ public class Javafx {
         return JOptionPane.showInputDialog(menu);
     }
 
+    public static String checkDamage(){
+        String menu = "Is the item damaged:\n" +
+            "1. yes\n" +
+            "2. no";
+        return JOptionPane.showInputDialog(menu);
+    }
+
 
 /*
 

@@ -9,6 +9,10 @@ public class App {
     public static void main(String args[]){
         Shop shop = new Shop();
 
+        shop.voegMateriaalToe(new Materiaal("a",1));
+        shop.voegMateriaalToe(new Materiaal("b",2));
+        shop.voegMateriaalToe(new Materiaal("c",3));
+
         boolean stop = false;
         while(!stop){
             String main = Javafx.drawMainMenu();
@@ -32,9 +36,22 @@ public class App {
                     break;
                 case "3":
                     id = Javafx.giveId();
-                    if(id!=null){
-                        shop.getmateriaal(Integer.parseInt(id)).getCurrentState().leenUit();
+                    if(id!=null) shop.getmateriaal(Integer.parseInt(id)).getCurrentState().leenUit();
+                    break;
+                case "4":
+                    id = Javafx.giveId();
+                    if(id!=null) {
+                        String damage = Javafx.checkDamage();
+                        if(damage!=null){
+                            if(damage.equals("1")) shop.getmateriaal(Integer.parseInt(id)).getCurrentState().brengTerug(true);
+                            else if(damage.equals("2")) shop.getmateriaal(Integer.parseInt(id)).getCurrentState().brengTerug(false);
+                            else throw new IllegalArgumentException();
+                        }
                     }
+                    break;
+                case "5":
+                    id = Javafx.giveId();
+                    if(id!=null) shop.getmateriaal(Integer.parseInt(id)).getCurrentState().herstel();
                     break;
 
             }
