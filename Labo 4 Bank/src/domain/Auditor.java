@@ -9,7 +9,7 @@ public class Auditor implements Observer {
 
     public Auditor(Bank bank) {
         this.bank = bank;
-        bank.addObserver(this);
+        bank.addObserver(Actie.AANMAKEN,this);
     }
 
     @Override
