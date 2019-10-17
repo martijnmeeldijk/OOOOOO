@@ -3,7 +3,7 @@ package domain;
 import java.util.Map;
 
 
-public class Bank {
+public class Bank implements Subject {
     private Map<String, Rekening> lijst;
 
     public Bank(Map<String, Rekening> lijst) {
@@ -18,10 +18,19 @@ public class Bank {
 
     public Rekening getRekening(String nummer){
         if(lijst.get(nummer) == null) throw new IllegalArgumentException("rekening bestaat niet");
-        
+
         return lijst.get(nummer);
     }
 
+    @Override
+    public void addObserver(Observer observer) {
+
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+
+    }
 }
 
 
