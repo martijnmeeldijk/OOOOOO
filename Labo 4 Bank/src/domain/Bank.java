@@ -18,6 +18,7 @@ public class Bank implements Subject {
         if(rekening == null || rekening.getNummer() == null) throw new IllegalArgumentException("geen rekening meegegeven");
 
         lijst.put(rekening.getNummer(), rekening);
+        notifyObserver(rekening);
     }
 
     public Rekening getRekening(String nummer){
@@ -37,6 +38,16 @@ public class Bank implements Subject {
     public void removeObserver(Observer observer) {
         if(observer == null) throw new IllegalArgumentException("geen observer meegegeven");
         observers.remove(observer);
+    }
+
+    @Override
+    public Rekening notifyObserver(Rekening rekening) {
+        for(Observer o : observers){
+            o.update(rekening);
+
+        }
+        return rekening;
+
     }
 }
 
