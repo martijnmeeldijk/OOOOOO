@@ -1,9 +1,6 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class Bank implements Subject {
@@ -16,7 +13,7 @@ public class Bank implements Subject {
     }
 
     public Bank(){
-        this.lijst = new HashMap<>();
+        this.lijst = new LinkedHashMap<>();
         observers = new ArrayList<>();
     }
 
