@@ -10,7 +10,7 @@ public class RekeningLogger implements Observer{
     Bank bank;
     public RekeningLogger(Bank bank) {
         this.bank = bank;
-        bank.addObserver(this);
+        bank.addObserver(Actie.AANMAKEN,this);
     }
 
 
