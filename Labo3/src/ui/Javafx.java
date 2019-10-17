@@ -23,7 +23,40 @@ import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import launcher.App;
 
+import javax.swing.*;
+
 public class Javafx {
+
+    public static String drawMainMenu(){
+        String menu = "1. Add party item\n" +
+                "2. Remover paryt item\n" +
+                "3. Rent party item\n" +
+                "4. Return party item\n" +
+                "5. Repair party item\n" +
+                "6. Show available party items\n\n" +
+                "0. Quit\n\n" +
+                "Make your choice:";
+        return JOptionPane.showInputDialog(menu);
+    }
+
+    public static String addPartyItemName(){
+        String menu = "Give a name:";
+        return JOptionPane.showInputDialog(menu);
+    }
+
+    public static String addPartyItemPrice(){
+        String menu = "Give a price:";
+        return JOptionPane.showInputDialog(menu);
+    }
+
+    public static void showList(String list){
+        JOptionPane.showMessageDialog(null,list);
+    }
+
+    public static String giveId(){
+        String menu = "Give the id:";
+        return JOptionPane.showInputDialog(menu);
+    }
 
 
 /*

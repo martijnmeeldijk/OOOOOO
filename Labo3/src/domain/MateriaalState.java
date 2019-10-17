@@ -1,6 +1,6 @@
 package domain;
 
-import domain.andreas.NotPossibleException;
+import domain.NotPossibleException;
 
 public abstract class MateriaalState {
     private Materiaal materiaal;

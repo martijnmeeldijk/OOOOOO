@@ -1,17 +1,12 @@
 package domain;
 
-import domain.andreas.FeestArtikel;
-import domain.andreas.NotPossibleException;
-import domain.andreas.VerwijderdState;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Schop {
+public class Shop {
     private Map<Integer, Materiaal> materiaallijst;
 
-    public Schop() {
+    public Shop() {
         materiaallijst=new HashMap<>();
     }
 
@@ -65,7 +60,15 @@ public class Schop {
         return materiaallijst.get(id).brengTerug(beschadigd);
     }
 
-
+    public String beschikbaar(){
+        String list = "";
+        for(int i=0;i<nextId();i++){
+            if(materiaallijst.containsKey(i) && materiaallijst.get(i).uitleenbaar()){
+                list+=i+": "+materiaallijst.get(i).toString()+"\n";
+            }
+        }
+        return list;
+    }
 
 
 

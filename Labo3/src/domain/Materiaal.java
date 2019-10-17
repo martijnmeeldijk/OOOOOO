@@ -65,4 +65,14 @@ public class Materiaal {
     public double getAanschafprijs() {
         return aanschafprijs;
     }
+
+    @Override
+    public String toString(){
+        return "naam: "+naam+", prijs: "+aanschafprijs;
+    }
+
+    public boolean uitleenbaar(){
+        if(currentState == uitleenbaar) return true;
+        return false;
+    }
 }

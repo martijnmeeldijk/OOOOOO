@@ -1,4 +1,4 @@
-package domain.andreas;
+package domain;
 
 
 public class NotPossibleException extends IllegalArgumentException {
