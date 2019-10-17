@@ -8,7 +8,7 @@ public class Auditor implements Observer {
     }
 
     @Override
-    public void update() {
-        System.out.println("Nieuwe rekening geopend op datum … met nummer… en saldo …");
+    public void update(Rekening rekening) {
+        bank.getRekening(rekening.getNummer());
     }
 }
