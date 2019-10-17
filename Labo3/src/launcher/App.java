@@ -53,7 +53,6 @@ public class App {
                     id = Javafx.giveId();
                     if(id!=null) shop.getmateriaal(Integer.parseInt(id)).getCurrentState().herstel();
                     break;
-
             }
         }
     }
