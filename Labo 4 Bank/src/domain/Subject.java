@@ -1,8 +1,7 @@
 package domain;
 
 public interface Subject {
-    void addObeserver(Observer observer);
+    void addObserver(Observer observer);
     void removeObserver(Observer observer);
-
-
+    void notifyObserver();
 }
