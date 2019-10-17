@@ -1,5 +1,7 @@
 package domain;
 
+import java.time.LocalDateTime;
+
 public class Auditor implements Observer {
     Bank bank;
 
@@ -9,6 +11,7 @@ public class Auditor implements Observer {
 
     @Override
     public void update(Rekening rekening) {
-        bank.getRekening(rekening.getNummer());
+        Rekening rekening1 = bank.getRekening(rekening.getNummer());
+        System.out.println("Nummer " + rekening1.getNummer() + " saldo= " + rekening1.getSaldo() + LocalDateTime.now().toString());
     }
 }
