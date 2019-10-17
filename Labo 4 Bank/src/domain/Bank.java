@@ -41,13 +41,11 @@ public class Bank implements Subject {
     }
 
     @Override
-    public Rekening notifyObserver(Rekening rekening) {
+    public void notifyObserver(Rekening rekening) {
         for(Observer o : observers){
             o.update(rekening);
 
         }
-        return rekening;
-
     }
 }
 
