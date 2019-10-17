@@ -1,9 +1,7 @@
 package domain;
 
 import java.time.LocalDateTime;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Auditor implements Observer {
     Bank bank;
@@ -15,8 +13,18 @@ public class Auditor implements Observer {
 
     @Override
     public void update(LinkedHashMap<String, Rekening> rekeningen) {
-        Object[] rekeningen1 = rekeningen.entrySet().toArray();
-        Rekening rekening1 =(Rekening) rekeningen1[rekeningen1.length -1];
+        Collection<Rekening> test=  rekeningen.values();
+        ArrayList<Rekening>test1= new ArrayList<>();
+        test1.addAll(test);
+        System.out.println("Lengte= " + test1.size()+"\n");
+        System.out.println("Salde laatste= "+test1.get(test1.size()-1).getSaldo());
+
+        /*
         System.out.println("Nummer " + rekening1.getNummer() + "\nsaldo= " + rekening1.getSaldo() +"\n"+ LocalDateTime.now().toString());
+        System.out.println("Het aantal rekeningen = " + test.size());
+
+         */
+
+
     }
 }
