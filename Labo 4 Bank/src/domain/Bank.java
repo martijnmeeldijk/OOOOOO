@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +12,11 @@ public class Bank implements Subject {
 
     public Bank(Map<String, Rekening> lijst) {
         this.lijst = lijst;
+        observers = new ArrayList<>();
+    }
+
+    public Bank(){
+        this.lijst = new HashMap<>();
         observers = new ArrayList<>();
     }
 
