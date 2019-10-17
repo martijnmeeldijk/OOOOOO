@@ -2,22 +2,25 @@ package domain;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 
 public class RekeningLogger implements Observer{
-
-    public RekeningLogger() {
+    Bank bank;
+    public RekeningLogger(Bank bank) {
+        this.bank = bank;
+        bank.addObserver(this);
     }
 
 
     @Override
     public void update(LinkedHashMap<String, Rekening> rekeningen) {
-        List<Rekening> test= (List<Rekening>) rekeningen.values();
-        //Object[] rekeningen1 = rekeningen.entrySet().toArray();
-        //Rekening rekening1 =(Rekening) rekeningen1[rekeningen1.length -1];
-        Rekening rekening1 = test.get(test.size() - 1);
-        System.out.println("Nummer " + rekening1.getNummer() + "\nsaldo= " + rekening1.getSaldo() +"\n"+ LocalDateTime.now().toString());
-        System.out.println("Het aantal rekeningen = " + test.size());
+        Collection<Rekening> test=  rekeningen.values();
+        ArrayList<Rekening>test1= new ArrayList<>();
+        test1.addAll(test);
+        System.out.println("-----LOGGER-----");
+        System.out.println("Aantal rekeningen: " + test1.size());
+        System.out.println("Rekeningnummer laatste: "+test1.get(test1.size()-1).getSaldo());
     }
 }
