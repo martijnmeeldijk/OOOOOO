@@ -1,13 +1,17 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 
 public class Bank implements Subject {
+    private List<Observer> observers;
     private Map<String, Rekening> lijst;
 
     public Bank(Map<String, Rekening> lijst) {
         this.lijst = lijst;
+        observers = new ArrayList<>();
     }
 
     public void openRekening(Rekening rekening){
@@ -24,12 +28,15 @@ public class Bank implements Subject {
 
     @Override
     public void addObserver(Observer observer) {
+        if(observer == null) throw new IllegalArgumentException("geen observer meegegeven");
 
+        observers.add(observer);
     }
 
     @Override
     public void removeObserver(Observer observer) {
-
+        if(observer == null) throw new IllegalArgumentException("geen observer meegegeven");
+        observers.remove(observer);
     }
 }
 
