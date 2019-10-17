@@ -13,6 +13,6 @@ public class Auditor implements Observer {
     @Override
     public void update(Rekening rekening) {
         Rekening rekening1 = bank.getRekening(rekening.getNummer());
-        System.out.println("Nummer " + rekening1.getNummer() + " saldo= " + rekening1.getSaldo() + LocalDateTime.now().toString());
+        System.out.println("Nummer " + rekening1.getNummer() + "\nsaldo= " + rekening1.getSaldo() +"\n"+ LocalDateTime.now().toString());
     }
 }
