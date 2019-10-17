@@ -4,16 +4,16 @@ import domain.NotPossibleException;
 
 public abstract class MateriaalState {
     private Materiaal materiaal;
-    double leenUit() {
+    public double leenUit() {
         throw new NotPossibleException();
     }
-    double brengTerug(boolean beschadigd) {
+    public double brengTerug(boolean beschadigd) {
         throw new NotPossibleException();
     }
-    void verwijder() {
+    public void verwijder() {
         throw new NotPossibleException();
     }
-    void herstel() {
+    public void herstel() {
         throw new NotPossibleException();
     }
 

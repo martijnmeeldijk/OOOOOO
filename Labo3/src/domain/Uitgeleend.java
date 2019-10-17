@@ -6,7 +6,7 @@ public class Uitgeleend extends MateriaalState {
     }
 
     @Override
-    double brengTerug(boolean beschadigd) {
+    public double brengTerug(boolean beschadigd) {
         if (beschadigd) {
             getMateriaal().setCurrentState(getMateriaal().getBeschadigd());
             return getMateriaal().getAanschafprijs() / 3;

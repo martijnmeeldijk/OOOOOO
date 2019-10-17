@@ -12,6 +12,7 @@ public class App {
         boolean stop = false;
         while(!stop){
             String main = Javafx.drawMainMenu();
+            String id;
             if(main == null || main.equals("0")) stop = true;
             else switch(main){
                 case "1":
@@ -26,8 +27,16 @@ public class App {
                     Javafx.showList(shop.beschikbaar());
                     break;
                 case "2":
-                    String id = Javafx.giveId();
+                    id = Javafx.giveId();
                     if(id!=null) shop.verwijderMateriaal(Integer.parseInt(id));
+                    break;
+                case "3":
+                    id = Javafx.giveId();
+                    if(id!=null){
+                        shop.getmateriaal(Integer.parseInt(id)).getCurrentState().leenUit();
+                    }
+                    break;
+
             }
         }
     }
