@@ -12,13 +12,17 @@ public class Bank {
     
 
     public void openRekening(Rekening rekening){
-        if(rekening == null) throw new IllegalArgumentException("penis");
+        if(rekening == null || rekening.getNummer() == null) throw new IllegalArgumentException("geen rekening meegegeven");
+
         lijst.put(rekening.getNummer(), rekening);
     }
 
-        public Rekening getRekening(String nummer){
-            return lijst.get(nummer);
-        }
+    public Rekening getRekening(String nummer){
+        if(lijst.get(nummer) == null) throw new IllegalArgumentException("rekening bestaat niet");
+        
+        return lijst.get(nummer);
     }
+
+}
 
 
