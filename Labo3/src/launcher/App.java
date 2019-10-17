@@ -19,5 +19,5 @@ import javafx.stage.Stage;
 import ui.Javafx;
 
 public class App {
-   
+
 }
