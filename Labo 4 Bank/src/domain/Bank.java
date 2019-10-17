@@ -14,4 +14,10 @@ public class Bank {
         if(rekening == null) throw new IllegalArgumentException("penis");
         lijst.put(rekening.getNummer(), rekening);
     }
-}
+
+        public Rekening getRekening(String nummer){
+            return lijst.get(nummer);
+        }
+    }
+
+
