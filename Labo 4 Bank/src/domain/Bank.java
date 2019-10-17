@@ -1,16 +1,19 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class Bank implements Subject {
     private List<Observer> observers;
-    private Map<String, Rekening> lijst;
+    private LinkedHashMap<String, Rekening> lijst;
 
-    public Bank(Map<String, Rekening> lijst) {
+    public Bank(LinkedHashMap<String, Rekening> lijst) {
         this.lijst = lijst;
+        observers = new ArrayList<>();
+    }
+
+    public Bank(){
+        this.lijst = new LinkedHashMap<>();
         observers = new ArrayList<>();
     }
 
@@ -43,7 +46,7 @@ public class Bank implements Subject {
     @Override
     public void notifyObserver(Rekening rekening) {
         for(Observer o : observers){
-            o.update(rekening);
+            o.update(lijst);
 
         }
     }
