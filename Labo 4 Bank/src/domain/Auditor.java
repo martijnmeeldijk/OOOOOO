@@ -24,12 +24,5 @@ public class Auditor implements Observer {
         System.out.println("Met nummer: "+test1.get(test1.size()-1).getNummer());
         System.out.println("Met Saldo: "+test1.get(test1.size()-1).getSaldo());
 
-        /*
-        System.out.println("Nummer " + rekening1.getNummer() + "\nsaldo= " + rekening1.getSaldo() +"\n"+ LocalDateTime.now().toString());
-        System.out.println("Het aantal rekeningen = " + test.size());
-
-         */
-
-
     }
 }
