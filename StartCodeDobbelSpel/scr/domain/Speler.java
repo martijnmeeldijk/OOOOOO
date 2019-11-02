@@ -1,5 +1,7 @@
 package domain;
 
+import view.ScoreView;
+
 import java.util.*;
 
 public class Speler implements Subject {
@@ -9,7 +11,6 @@ public class Speler implements Subject {
     int punten;
     int vorigeAantalOgen;
     Map<Integer,Observer> observers;
-    //List<Observer> observers;
 
     public Speler(int spelersnr) {
         observers= new HashMap<Integer,Observer>();

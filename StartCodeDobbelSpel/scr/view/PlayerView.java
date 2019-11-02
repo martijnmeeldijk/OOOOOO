@@ -17,8 +17,10 @@ public class PlayerView implements Observer {
 	private Button playButton; 
 	private Label messageLabel;
 	private Label messageLabe2;
+	private ScoreView scoreView;
 
-	public PlayerView(int spelerNummer){
+	public PlayerView(int spelerNummer, ScoreView scoreView){
+		this.scoreView= scoreView;
 		this.speler = new Speler(spelerNummer);
 		diceLabel = new Label("beurt 1: ");
 		playButton = new Button("Werp dobbelstenen");
@@ -26,6 +28,7 @@ public class PlayerView implements Observer {
 		playButton.setDisable(true);
 		messageLabel = new Label("Spel nog niet gestart");
 		messageLabe2 = new Label("nog niemand heeft geworpen");
+
 
 		layoutComponents();
 		stage.setScene(playerScene);
@@ -56,6 +59,7 @@ public class PlayerView implements Observer {
 		if(spelersNummer==speler.getSpelersnr()-1){
 			isAanBeurt(true);
 		}
+		scoreView.update(spelersNummer);
 	}
 
 	class ThrowDicesHandler implements EventHandler<ActionEvent> {
