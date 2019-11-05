@@ -28,10 +28,6 @@ public class Spel implements Observer {
         scoreView.update(spelersNummer);
 
         scoreView.updateLabel(scoreView.getlabel() +"\n" + "speler "+ spelersNummer+ " heeft score "+ (spelers.get(spelersNummer).getSpeler().getPunten()));
-
-       /*
-        scoreView.setScoreLabel(scoreView.getScoreLabel() + "\n" + "speler "+ spelersNummer+ " heeft score "+ (spelers.get(spelersNummer).getSpeler().getPunten()));
-        */
         if(speler==spelers.size()-1 && beurt<4){
             speler=0;
             spelers.get(1).isAanBeurt(true);
