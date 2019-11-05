@@ -1,5 +1,6 @@
 package view;
 import domain.Observer;
+import domain.Spel;
 import domain.Speler;
 import domain.Subject;
 import javafx.event.ActionEvent;
@@ -17,10 +18,10 @@ public class PlayerView implements Observer {
 	private Button playButton; 
 	private Label messageLabel;
 	private Label messageLabe2;
-	private ScoreView scoreView;
+	private Spel spel;
 
-	public PlayerView(int spelerNummer, ScoreView scoreView){
-		this.scoreView= scoreView;
+	public PlayerView(int spelerNummer, Spel spel){
+		this.spel= spel;
 		this.speler = new Speler(spelerNummer);
 		diceLabel = new Label("beurt 1: ");
 		playButton = new Button("Werp dobbelstenen");
@@ -55,11 +56,10 @@ public class PlayerView implements Observer {
 	@Override
 	public void update(int spelersNummer) {
 		messageLabe2.setText("speler "+ spelersNummer+ " heeft score "+ ((PlayerView)speler.getObservers().get(spelersNummer)).getSpeler().getPunten() );
-		System.out.println("test" + spelersNummer);
 		if(spelersNummer==speler.getSpelersnr()-1){
 			isAanBeurt(true);
 		}
-		scoreView.update(spelersNummer);
+		//spel.update(spelersNummer);
 	}
 
 	class ThrowDicesHandler implements EventHandler<ActionEvent> {

@@ -18,7 +18,6 @@ public class Speler implements Subject {
         this.worp1 = 0;
         this.worp2 = 0;
         this.punten=0;
-        //observers=new ArrayList<>();
     }
 
     public void gooi(){
@@ -78,6 +77,7 @@ public class Speler implements Subject {
         for (Integer getallen:keys) {
             observers.get(getallen).update(spelersnr);
         }
+
     }
 
     public int getSpelersnr() {

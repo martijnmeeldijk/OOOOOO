@@ -14,13 +14,13 @@ public class ScoreView implements Observer {
 	private Stage stage = new Stage();
 	private Scene scoreScene;
 	private Label scoreLabel;
-	Map<Integer, Speler> spelers;
+	private Label testLabel;
 
 
 
 	public ScoreView(){
-		spelers= new HashMap<Integer,Speler>();
-		scoreLabel = new Label();
+		scoreLabel = new Label("");
+		testLabel = new Label("");
 		scoreLabel.setStyle("-fx-font-family: \"Courier new\"; -fx-font-size: 12; -fx-text-fill: darkred;");
 
 		layoutComponents();
@@ -31,24 +31,27 @@ public class ScoreView implements Observer {
 		stage.setY(400);
 		stage.show();
 	}
-	public void add(int key,Speler speler) {
-		spelers.put(key,speler);
-	}
+
 
 	private void layoutComponents() {
 		VBox root = new VBox();
 		scoreScene = new Scene(root,400,200);
 		root.getChildren().add(scoreLabel);
+		root.getChildren().add(testLabel);
 	}
 	
 	private void voegScoreLijnToe(String scoreLijn){
 		scoreLabel.setText(scoreLabel.getText()+"\n"+scoreLijn);
 	}
 
+	public void updateLabel(String string){
+		testLabel.setText(string);
+	}
+	public String getlabel(){
+		return  testLabel.getText();
+	}
+
 	@Override
 	public void update(int spelersNummer) {
-		scoreLabel.setText(scoreLabel.getText() + "\n" + "speler: "+ spelersNummer+ " heeft score");
-		//scoreLabel.setText(scoreLabel.getText() + "\n" + "speler "+ spelersNummer+ " heeft score "+ (spelers.get(spelersNummer).getPunten()));
-
 	}
 }
