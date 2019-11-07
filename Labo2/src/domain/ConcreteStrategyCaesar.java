@@ -10,6 +10,10 @@ public class ConcreteStrategyCaesar implements CodingStrategy {
         this.aantalPlaatsen = aantalPlaatsen;
     }
 
+    public ConcreteStrategyCaesar() {
+        aantalPlaatsen = 13;
+    }
+
     public char[] getAlphabet() {
         return alphabet;
     }
