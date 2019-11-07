@@ -45,20 +45,12 @@ public class Speler implements Subject {
         return worp1;
     }
 
-    public void setWorp1(int worp1) {
-        this.worp1 = worp1;
-    }
-
     public int getWorp2() {
         return worp2;
     }
 
     public int getPunten() {
         return punten;
-    }
-
-    public void setWorp2(int worp2) {
-        this.worp2 = worp2;
     }
 
     @Override
