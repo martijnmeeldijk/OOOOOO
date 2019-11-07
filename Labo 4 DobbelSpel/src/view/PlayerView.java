@@ -48,7 +48,10 @@ public class PlayerView  {
 	class ThrowDicesHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            
+        	Dobbel d = new Dobbel();
+            diceLabel.setText("beurt 1: "+d.dobbel());
+            messageLabel.setText("Started");
+            isAanBeurt(false);
         }
     }
 }

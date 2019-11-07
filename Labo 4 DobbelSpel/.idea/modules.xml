@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/StartCodeDobbelSpel.iml" filepath="$PROJECT_DIR$/.idea/StartCodeDobbelSpel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Labo 4 DobbelSpel.iml" filepath="$PROJECT_DIR$/Labo 4 DobbelSpel.iml" />
     </modules>
   </component>
 </project>
