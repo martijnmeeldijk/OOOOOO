@@ -2,6 +2,7 @@ package launcher;
 
 import domain.CodeerContext;
 import domain.ConcreteStrategyCaesar;
+import domain.ConcreteStrategyRandomAdapter;
 import domain.ConcreteStrategySpiegel;
 import ui.CodeerUi;
 
@@ -14,6 +15,7 @@ public class ShopLauncher {
             if(methode == null || methode.equals("0")) stop=true;
             else if(methode.equals("1")) codeerContext.setCodingStrategy(new ConcreteStrategyCaesar(2));
             else if(methode.equals("2")) codeerContext.setCodingStrategy(new ConcreteStrategySpiegel());
+            else if(methode.equals("3")) codeerContext.setCodingStrategy(new ConcreteStrategyRandomAdapter());
             else throw new IllegalArgumentException();
 
             if(!stop){

@@ -1,17 +1,26 @@
 package view;
 
+import domain.Observer;
+import domain.Speler;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class ScoreView {
+import java.util.HashMap;
+import java.util.Map;
+
+public class ScoreView implements Observer {
 	private Stage stage = new Stage();
 	private Scene scoreScene;
-	private Label scoreLabel; 
-		
+	private Label scoreLabel;
+	private Label testLabel;
+
+
+
 	public ScoreView(){
-		scoreLabel = new Label();
+		scoreLabel = new Label("");
+		testLabel = new Label("");
 		scoreLabel.setStyle("-fx-font-family: \"Courier new\"; -fx-font-size: 12; -fx-text-fill: darkred;");
 
 		layoutComponents();
@@ -23,14 +32,26 @@ public class ScoreView {
 		stage.show();
 	}
 
+
 	private void layoutComponents() {
 		VBox root = new VBox();
 		scoreScene = new Scene(root,400,200);
 		root.getChildren().add(scoreLabel);
+		root.getChildren().add(testLabel);
 	}
 	
 	private void voegScoreLijnToe(String scoreLijn){
 		scoreLabel.setText(scoreLabel.getText()+"\n"+scoreLijn);
 	}
-	
+
+	public void updateLabel(String string){
+		testLabel.setText(string);
+	}
+	public String getlabel(){
+		return  testLabel.getText();
+	}
+
+	@Override
+	public void update(int spelersNummer) {
+	}
 }

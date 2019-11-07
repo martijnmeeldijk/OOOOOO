@@ -1,5 +1,7 @@
 package domain;
 
+import view.ScoreView;
+
 import java.util.*;
 
 public class Speler implements Subject {
@@ -9,7 +11,6 @@ public class Speler implements Subject {
     int punten;
     int vorigeAantalOgen;
     Map<Integer,Observer> observers;
-    //List<Observer> observers;
 
     public Speler(int spelersnr) {
         observers= new HashMap<Integer,Observer>();
@@ -17,7 +18,6 @@ public class Speler implements Subject {
         this.worp1 = 0;
         this.worp2 = 0;
         this.punten=0;
-        //observers=new ArrayList<>();
     }
 
     public void gooi(){
@@ -45,20 +45,12 @@ public class Speler implements Subject {
         return worp1;
     }
 
-    public void setWorp1(int worp1) {
-        this.worp1 = worp1;
-    }
-
     public int getWorp2() {
         return worp2;
     }
 
     public int getPunten() {
         return punten;
-    }
-
-    public void setWorp2(int worp2) {
-        this.worp2 = worp2;
     }
 
     @Override
@@ -77,6 +69,7 @@ public class Speler implements Subject {
         for (Integer getallen:keys) {
             observers.get(getallen).update(spelersnr);
         }
+
     }
 
     public int getSpelersnr() {

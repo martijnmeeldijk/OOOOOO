@@ -7,7 +7,7 @@ import javax.swing.*;
 public class CodeerUi {
 
     public static String drawMainMenu(){
-        String menu = "1. caesar\n2. spiegelen\\n\n0. Quit";
+        String menu = "1. caesar\n2. spiegelen\n3. Random\n\n0. Quit";
         String choiceString = JOptionPane.showInputDialog(menu);
         return choiceString;
     }
