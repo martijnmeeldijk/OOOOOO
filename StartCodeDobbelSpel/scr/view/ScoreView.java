@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ScoreView implements Observer {
+public class ScoreView implements Observer{
 	private Stage stage = new Stage();
 	private Scene scoreScene;
 	private Label scoreLabel;
@@ -20,8 +20,8 @@ public class ScoreView implements Observer {
 
 	public ScoreView(){
 		scoreLabel = new Label("");
-		testLabel = new Label("");
-		scoreLabel.setStyle("-fx-font-family: \"Courier new\"; -fx-font-size: 12; -fx-text-fill: darkred;");
+		testLabel = new Label("beurt 1");
+		//scoreLabel.setStyle("-fx-font-family: \"Courier new\"; -fx-font-size: 12; -fx-text-fill: darkred;"); verandert niets
 
 		layoutComponents();
 		stage.setScene(scoreScene);
@@ -36,11 +36,11 @@ public class ScoreView implements Observer {
 	private void layoutComponents() {
 		VBox root = new VBox();
 		scoreScene = new Scene(root,400,200);
-		root.getChildren().add(scoreLabel);
 		root.getChildren().add(testLabel);
+		root.getChildren().add(scoreLabel);
 	}
 	
-	private void voegScoreLijnToe(String scoreLijn){
+	public void voegScoreLijnToe(String scoreLijn){
 		scoreLabel.setText(scoreLabel.getText()+"\n"+scoreLijn);
 	}
 
@@ -52,6 +52,9 @@ public class ScoreView implements Observer {
 	}
 
 	@Override
-	public void update(int spelersNummer) {
+	public void update(int beurtnr) {
+		scoreLabel.setText("");
+		System.out.println(beurtnr);
+		testLabel.setText("beurt "+beurtnr);
 	}
 }
