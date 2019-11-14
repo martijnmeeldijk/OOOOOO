@@ -13,18 +13,28 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class PlayerView implements Observer {
+
     private Stage stage = new Stage();
+
     private int spelersnr;
+
     private Scene playerScene;
     private Label diceLabel;
     private Button playButton;
     private Label messageLabel;
     private Label messageLabe2;
+
     private Spel spel;
 
     public PlayerView(int spelerNummer, Spel spel) {
+        //link playerview aan spel
         this.spel = spel;
+
+        //zet spelersnr
         this.spelersnr = spelerNummer;
+
+        //layout
+        //creeer componenten
         diceLabel = new Label("beurt 1: ");
         playButton = new Button("Werp dobbelstenen");
         playButton.setOnAction(new ThrowDicesHandler());
@@ -32,8 +42,10 @@ public class PlayerView implements Observer {
         messageLabel = new Label("Spel nog niet gestart");
         messageLabe2 = new Label("nog niemand heeft geworpen");
 
-
+        //plaats componenten
         layoutComponents();
+
+        //creeer en toon
         stage.setScene(playerScene);
         stage.setTitle("Speler " + spelerNummer);
         stage.setResizable(false);

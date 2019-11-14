@@ -25,13 +25,13 @@ public class Main extends Application {
 		speler1.add(98,pv2);
 		speler1.add(97,pv3);
 
-		speler2.add(99,pv1);
+		/*speler2.add(99,pv1);
 		speler2.add(98,pv2);
 		speler2.add(97,pv3);
 
 		speler3.add(99,pv1);
 		speler3.add(98,pv2);
-		speler3.add(97,pv3);
+		speler3.add(97,pv3);*/
 
 		pv1.isAanBeurt(true);
 
