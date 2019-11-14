@@ -35,7 +35,7 @@ public class ScoreView implements Observer{
 
 	private void layoutComponents() {
 		VBox root = new VBox();
-		scoreScene = new Scene(root,400,200);
+		scoreScene = new Scene(root,400,400);
 		root.getChildren().add(testLabel);
 		root.getChildren().add(scoreLabel);
 	}
@@ -53,8 +53,7 @@ public class ScoreView implements Observer{
 
 	@Override
 	public void update(int beurtnr) {
-		scoreLabel.setText("");
-		System.out.println(beurtnr);
+		voegScoreLijnToe("");
 		testLabel.setText("beurt "+beurtnr);
 	}
 }

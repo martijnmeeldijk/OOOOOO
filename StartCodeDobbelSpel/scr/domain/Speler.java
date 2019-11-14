@@ -6,14 +6,14 @@ import java.util.*;
 
 public class Speler implements Subject {
     private int spelersnr;
-    int worp1;
-    int worp2;
-    int punten;
-    int vorigeAantalOgen;
-    Map<Integer,Observer> observers;
+    private int worp1;
+    private int worp2;
+    private int punten;
+    private int vorigeAantalOgen;
+    private Map<Integer,Observer> observers;
 
     public Speler(int spelersnr) {
-        observers= new HashMap<Integer,Observer>();
+        observers= new HashMap<>();
         this.spelersnr=spelersnr;
         this.worp1 = 0;
         this.worp2 = 0;
@@ -26,7 +26,7 @@ public class Speler implements Subject {
     }
 
     public int berekenScore(){
-        int score=0;
+        int score;
         if(worp1==worp2){
             score=(worp1+worp2)*2;
         }
@@ -67,9 +67,9 @@ public class Speler implements Subject {
     public void notifyObserver() {
         Set<Integer> keys=observers.keySet();
         for (Integer getallen:keys) {
+            //System.out.println("de observerkey:"+getallen+",spelersnr:"+spelersnr);
             observers.get(getallen).update(spelersnr);
         }
-
     }
 
     public int getSpelersnr() {

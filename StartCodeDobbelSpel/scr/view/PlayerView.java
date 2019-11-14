@@ -71,9 +71,14 @@ public class PlayerView implements Observer {
     public void update(int nummer) {
         messageLabel.setText("");
         messageLabe2.setText("speler " + nummer + " heeft score " + spel.getSpeler(nummer).getPunten());
-        if (nummer == spel.getSpeler(spelersnr).getSpelersnr() -1 && spel.getBeurt()<4) {
+        if (nummer == spel.getSpeler(spelersnr).getSpelersnr() -1) {
             isAanBeurt(true);
         }
+        //beurt eindigt
+        if(nummer==spel.aantalSpelers()&& spelersnr==1){
+            isAanBeurt(true);
+        }
+        if(spel.getBeurt()==4) isAanBeurt(false);
     }
 
     class ThrowDicesHandler implements EventHandler<ActionEvent> {
@@ -81,10 +86,11 @@ public class PlayerView implements Observer {
         public void handle(ActionEvent event) {
             spel.getSpeler(spelersnr).gooi();
             spel.getSpeler(spelersnr).berekenScore();
-            spel.getSpeler(spelersnr).notifyObserver();
             messageLabel.setText(Integer.toString(spel.getSpeler(spelersnr).getPunten()));
             isAanBeurt(false);
             spel.update(spelersnr);
+            spel.getSpeler(spelersnr).notifyObserver();
+            //System.out.println(spel.getBeurt());
         }
     }
 }
