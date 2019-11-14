@@ -2,6 +2,9 @@ package domain;
 
 public class ConcreteStrategySpiegel implements CodingStrategy{
 
+    public ConcreteStrategySpiegel() {
+    }
+
     @Override
     public String decodeer(String message) {
         return codeer(message);

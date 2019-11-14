@@ -1,9 +1,6 @@
 package launcher;
 
-import domain.CodeerContext;
-import domain.ConcreteStrategyCaesar;
-import domain.ConcreteStrategyRandomAdapter;
-import domain.ConcreteStrategySpiegel;
+import domain.*;
 import ui.CodeerUi;
 
 public class ShopLauncher {
@@ -12,11 +9,7 @@ public class ShopLauncher {
         boolean stop = false;
         while(!stop){
             String methode = CodeerUi.drawMainMenu();
-            if(methode == null || methode.equals("0")) stop=true;
-            else if(methode.equals("1")) codeerContext.setCodingStrategy(new ConcreteStrategyCaesar(2));
-            else if(methode.equals("2")) codeerContext.setCodingStrategy(new ConcreteStrategySpiegel());
-            else if(methode.equals("3")) codeerContext.setCodingStrategy(new ConcreteStrategyRandomAdapter());
-            else throw new IllegalArgumentException();
+            codeerContext.setCodingStrategy(CodeerFactory.createCoding(methode));
 
             if(!stop){
                 String deorenc = CodeerUi.codingOrEncoding();
