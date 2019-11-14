@@ -36,7 +36,7 @@ public class Spel implements Observer {
 
     @Override
     public void update(int spelersNummer) {
-        scoreView.voegScoreLijnToe("speler "+ spelersNummer+ " heeft score "+ (spelers.get(spelersNummer).getPunten()));
+        scoreView.voegScoreLijnToe("speler "+ spelersNummer+ " heeft "+ (spelers.get(spelersNummer).getPunten())+" punten");
 
         //volgende speler of volgende beurt
         if(speler==spelers.size()-1 && beurt<4){

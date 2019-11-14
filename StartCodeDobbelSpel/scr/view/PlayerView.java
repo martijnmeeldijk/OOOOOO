@@ -69,8 +69,7 @@ public class PlayerView implements Observer {
 
     @Override
     public void update(int nummer) {
-        messageLabel.setText("");
-        messageLabe2.setText("speler " + nummer + " heeft score " + spel.getSpeler(nummer).getPunten());
+        messageLabe2.setText("speler " + nummer + " heeft " + spel.getSpeler(nummer).getScore()+" geworpen");
         if (nummer == spel.getSpeler(spelersnr).getSpelersnr() -1) {
             isAanBeurt(true);
         }
@@ -86,7 +85,7 @@ public class PlayerView implements Observer {
         public void handle(ActionEvent event) {
             spel.getSpeler(spelersnr).gooi();
             spel.getSpeler(spelersnr).berekenScore();
-            messageLabel.setText(Integer.toString(spel.getSpeler(spelersnr).getPunten()));
+            messageLabel.setText(spel.getSpeler(spelersnr).getScore());
             isAanBeurt(false);
             spel.update(spelersnr);
             spel.getSpeler(spelersnr).notifyObserver();

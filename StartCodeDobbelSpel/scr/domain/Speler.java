@@ -25,7 +25,7 @@ public class Speler implements Subject {
         this.worp2= (int) Math.ceil(Math.random()*6);
     }
 
-    public int berekenScore(){
+    public void berekenScore(){
         int score;
         if(worp1==worp2){
             score=(worp1+worp2)*2;
@@ -37,8 +37,7 @@ public class Speler implements Subject {
             score+=5;
         }
         vorigeAantalOgen=worp1+worp2;
-        punten=score;
-        return score;
+        punten+=score;
     }
 
     public int getWorp1() {
@@ -51,6 +50,10 @@ public class Speler implements Subject {
 
     public int getPunten() {
         return punten;
+    }
+
+    public String getScore() {
+        return worp1+" en "+worp2;
     }
 
     @Override
