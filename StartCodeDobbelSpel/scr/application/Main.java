@@ -10,7 +10,7 @@ import view.ScoreView;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
-		Spel spel = new Spel();
+		/*Spel spel = new Spel();
 		PlayerView pv4 = new PlayerView(4,spel);
 		PlayerView pv3 = new PlayerView(3,spel);
 		PlayerView pv2 = new PlayerView(2,spel);
@@ -44,7 +44,24 @@ public class Main extends Application {
 		speler4.add(3,pv3);
 		speler4.add(4,pv4);
 
-		pv1.isAanBeurt(true);
+		pv1.isAanBeurt(true);*/
+
+		int aantalSpelers = 5;
+
+		Spel spel = new Spel();
+		for(int i=0;i<aantalSpelers;i++){
+			spel.addSpeler();
+		}
+
+		for(int i=1;i<aantalSpelers+1;i++){
+			PlayerView pv = new PlayerView(i,spel);
+			if(i==1) pv.isAanBeurt(true);
+			for(int j=1;j<aantalSpelers+1;j++){
+				spel.getSpeler(j).add(i,pv);
+			}
+		}
+
+
 
 	}
 	

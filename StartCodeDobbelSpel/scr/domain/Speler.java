@@ -70,7 +70,6 @@ public class Speler implements Subject {
     public void notifyObserver() {
         Set<Integer> keys=observers.keySet();
         for (Integer getallen:keys) {
-            //System.out.println("de observerkey:"+getallen+",spelersnr:"+spelersnr);
             observers.get(getallen).update(spelersnr);
         }
     }

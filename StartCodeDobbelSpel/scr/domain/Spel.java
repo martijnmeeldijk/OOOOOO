@@ -34,6 +34,15 @@ public class Spel implements Observer {
         spelers.put(key,speler);
     }
 
+    public void addSpeler() {
+        int key=1;
+        for(int i:spelers.keySet()){
+            if(i>=key) key=i+1;
+        }
+        Speler newSpeler = new Speler(key);
+        spelers.put(key,newSpeler);
+    }
+
     @Override
     public void update(int spelersNummer) {
         scoreView.voegScoreLijnToe("speler "+ spelersNummer+ " heeft "+ (spelers.get(spelersNummer).getPunten())+" punten");

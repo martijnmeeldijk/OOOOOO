@@ -35,12 +35,12 @@ public class PlayerView implements Observer {
 
         //layout
         //creeer componenten
-        diceLabel = new Label("beurt 1: ");
+        diceLabel = new Label("score: ");
         playButton = new Button("Werp dobbelstenen");
         playButton.setOnAction(new ThrowDicesHandler());
         playButton.setDisable(true);
-        messageLabel = new Label("Spel nog niet gestart");
-        messageLabe2 = new Label("nog niemand heeft geworpen");
+        messageLabel = new Label("nog niet geworpen");
+        messageLabe2 = new Label("spel nog niet begonnen");
 
         //plaats componenten
         layoutComponents();
@@ -89,7 +89,6 @@ public class PlayerView implements Observer {
             isAanBeurt(false);
             spel.update(spelersnr);
             spel.getSpeler(spelersnr).notifyObserver();
-            //System.out.println(spel.getBeurt());
         }
     }
 }
